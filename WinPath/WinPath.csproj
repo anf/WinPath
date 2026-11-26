@@ -1,45 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
-    <PublishReadyToRun>true</PublishReadyToRun>
-    <Version>0.3.1</Version>
-    <Authors>ANF-Studios</Authors>
-    <Description>A simple tool to add variables to your Path!</Description>
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net11.0</TargetFramework>
+		<PublishReadyToRun>true</PublishReadyToRun>
+		<Version>0.3.1</Version>
+		<Authors>ANF-Studios</Authors>
+		<Description>A simple tool to add variables to your Path!</Description>
 
-    <RuntimeIdentifiers>win-x86;win-x64;win-arm;win-arm64;win10-x64</RuntimeIdentifiers>
+		<RuntimeIdentifiers>win-x64;win-x86;win-arm64</RuntimeIdentifiers>
 
-    <OutputPath>$(SolutionDir)\bin\$(MSBuildProjectName)\</OutputPath>
-    <BaseOutputPath>$(SolutionDir)\bin\$(MSBuildProjectName)\$(Configuration)\</BaseOutputPath>
-    <BaseIntermediateOutputPath>$(SolutionDir)\obj\$(MSBuildProjectName)\$(Configuration)\</BaseIntermediateOutputPath>
-  </PropertyGroup>
+		<OutputPath>$(SolutionDir)\bin\$(MSBuildProjectName)\</OutputPath>
+		<BaseOutputPath>$(SolutionDir)\bin\$(MSBuildProjectName)\$(Configuration)\</BaseOutputPath>
+		<BaseIntermediateOutputPath>$(SolutionDir)\obj\$(MSBuildProjectName)\$(Configuration)\</BaseIntermediateOutputPath>
+	</PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>$(SolutionDir)\bin\$(MSBuildProjectName)\</OutputPath>
-    <BaseOutputPath>$(SolutionDir)\bin\$(MSBuildProjectName)\$(Configuration)\</BaseOutputPath>
-    <BaseIntermediateOutputPath>$(SolutionDir)\obj\$(MSBuildProjectName)\$(Configuration)\</BaseIntermediateOutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <OutputPath>$(SolutionDir)\bin\$(MSBuildProjectName)\</OutputPath>
-    <BaseOutputPath>$(SolutionDir)\bin\$(MSBuildProjectName)\$(Configuration)\</BaseOutputPath>
-    <BaseIntermediateOutputPath>$(SolutionDir)\obj\$(MSBuildProjectName)\$(Configuration)\</BaseIntermediateOutputPath>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="bin\**" />
-    <Compile Remove="obj\**" />
-    <EmbeddedResource Remove="bin\**" />
-    <EmbeddedResource Remove="obj\**" />
-    <None Remove="bin\**" />
-    <None Remove="obj\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="CommandLineParser" Version="2.8.0" />
-    <ProjectReference Include="../WinPath.Library/WinPath.Library.csproj" />
-    <!-- <PackageReference Include="WinPath.Library" Version="0.2.1" /> -->
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="CommandLineParser" Version="2.9.1" />
+		<ProjectReference Include="../WinPath.Library/WinPath.Library.csproj" />
+	</ItemGroup>
 
 </Project>
